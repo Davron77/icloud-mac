@@ -1,6 +1,6 @@
 :root {
   --theme-bg-color: rgba(16 18 27 / 40%);
-  --border-color: rgba(113 119 144 / 25%);
+  --border-color: rgb(255 255 255 / 17%);
   --theme-color: #f9fafb;
   --inactive-color: rgba(255, 255, 255, 0.678);
   --body-font: "Poppins", sans-serif;
@@ -16,10 +16,25 @@
   --scrollbar-bg: rgb(1 2 3 / 40%);
 }
 
+::-webkit-scrollbar {
+  width: 6px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-bg);
+  border-radius: 10px;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+a {
+  color: white;
+  text-decoration: none;
 }
 
 body {
@@ -68,7 +83,7 @@ body {
   justify-content: space-between;
   border-bottom: 1px solid var(--border-color);
   height: 58px;
-  padding: 0 40px;
+  padding: 0 50px 0 26px;
 }
 
 .icloud-header-close {
@@ -81,6 +96,7 @@ body {
   width: 15px;
   height: 15px;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .icloud-header-close-item:nth-child(1) {
@@ -125,6 +141,11 @@ body {
 .icloud-header-navbar-item:hover {
   color: white;
   border-color: white;
+}
+
+.icloud-header-navbar-item-none-active:hover {
+  color: var(--inactive-color);
+  border-color: transparent;
 }
 
 .icloud-header-navbar-item h4 {
@@ -211,3 +232,77 @@ body {
 }
 
 /* ICLOUD HEADER END */
+
+/* ICLOUD MAIN START */
+
+.icloud-main {
+  display: flex;
+  overflow: hidden;
+  height: calc(860px - 58px - 26px);
+}
+
+/* ICLOUD MAIN LEFT SIDE START */
+
+.icloud-left-side {
+  width: 282px;
+  height: 100%;
+  overflow: auto;
+  padding: 26px;
+  border-right: 1px solid var(--border-color);
+}
+
+.icloud-side-wrapper + .icloud-side-wrapper {
+  margin-top: 20px;
+}
+
+.icloud-side-wrapper-title {
+  margin-bottom: 14px;
+}
+
+.icloud-side-wrapper-menu a {
+  text-decoration: none;
+  color: var(--theme-color);
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.icloud-side-wrapper-menu a:hover {
+  background-color: rgb(12 15 25 / 53%);
+}
+
+.icloud-side-wrapper-menu svg {
+  width: 16px;
+  margin-right: 8px;
+}
+
+/* ICLOUD MAIN LEFT SIDE END */
+
+.icloud-main-side {
+  width: 100%;
+}
+
+.icloud-main-header {
+  display: flex;
+}
+
+.icloud-main-header-menu {
+  display: flex;
+  margin-left: 150px;
+}
+
+.icloud-main-content {
+  display: flex;
+  flex-direction: column;
+  color: var(--theme-color);
+  padding: 20px 40px;
+  height: 100%;
+  overflow: auto;
+  background-color: var(--theme-bg-color);
+}
+
+/* ICLOUD MAIN END */
